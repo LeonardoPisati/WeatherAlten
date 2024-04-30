@@ -1,0 +1,13 @@
+<div class="container">
+  <h3 class="text-center my-4">AltenWeather</h3>
+  <google-map style="display: flex; justify-content:center; align-items:center;" height="450px" width="1200px" [options]="options" >
+@for (marker of markers; track markers){
+  <map-advanced-marker
+  style="cursor: pointer;"
+  [position]="{lat: marker.lat, lng: marker.lng}"
+  
+  (mapClick)="markerClicked(marker.label, marker.lat, marker.lng)"
+  />
+}
+</google-map><app-weather></app-weather>
+</div>

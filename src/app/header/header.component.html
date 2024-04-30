@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#"class="navbar-brand">Weather</a>
+        </div>
+        <div class="navbar-default">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/history" *ngIf="isAuth">History</a></li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="isAuth">
+                    <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
+                </li>
+                <li *ngIf="!isAuth">
+                    <a style="cursor: pointer;" routerLink="/auth">Login/Signup</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
